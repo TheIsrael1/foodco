@@ -3,6 +3,12 @@ import styles from './homepage.module.css'
 import Logo from '../../assets/Logo.svg'
 import TopImg from '../../assets/topIcon.svg'
 import {BsSearch} from 'react-icons/bs'
+import Card from '../../components/Card'
+import Add from '../../assets/Add.svg'
+import Chart from '../../assets/Chart.svg'
+import Folder from '../../assets/Folder.svg'
+import Profile from '../../assets/Profile.svg'
+
 
 const HomePage = () => {
     return (
@@ -28,7 +34,26 @@ const HomePage = () => {
                         </div>
                         </div>
                         <div className={`${styles.menuCon}`}>
-                            
+                            <Card 
+                            title={`Input Today`} 
+                            description={`Input Your Daily Data & Report i.e Raw Materials e.t.c.`} 
+                            icon={<img src={Add} alt='add'></img>}
+                            />
+                            <Card 
+                            title={`Dashbaord`} 
+                            description={`View Metrics, Insights & Comparison Based On Your Input & Reports`} 
+                            icon={<img src={Chart} alt='chart'></img>}
+                            />
+                            <Card 
+                            title={`My Reports`}
+                            description={`Look At Your Reports Based On InputProvided Daily & Download In A PDF Format`}
+                            icon={<img src={Folder} alt='folder'></img>}
+                            />
+                            <Card 
+                            title={`My Profile`}
+                            description={`Personal Biodata, Preferences & Application Settings`}
+                            icon={<img src={Profile} alt='profile'></img>}
+                            />
                         </div>
                     </div>
                 </div>

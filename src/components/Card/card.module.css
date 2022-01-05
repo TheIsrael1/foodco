@@ -1,0 +1,40 @@
+.cardCon{
+    background-color: var(--white);
+    color: var(--black);
+    box-shadow: var(--shadow);
+    margin: 1rem 0;
+    margin-right: .5rem;
+    height: 6rem;
+    width: 18rem;
+    border-radius: 8px;
+    transition: all .1s ease-in;
+    cursor: pointer;
+}
+
+.cardRow{
+    display: grid;
+    grid-template-columns: 3rem auto;
+    align-items: center;
+    margin: auto 0;
+    padding: .5rem 1rem;
+}
+
+.cardIcon{
+    padding: 0 .4rem;
+    /* width: 100%; */
+}
+
+.cardText{
+     padding: 0 .5rem;
+
+}
+
+.cardTitle{
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.cardDescription{
+    font-size: .75em;
+    /* line-height: 1rem; */
+}

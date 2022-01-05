@@ -16,7 +16,7 @@
   --bold: 600;
   --semi-bold: 500;
   --rounded: 0.7rem;
-  --shadow: rgba(0, 0, 0, 0.161) 0px 3px 6px;
+  --shadow:  0px 3px 6px rgba(0, 0, 0, 0.161);
 }
 
 body {

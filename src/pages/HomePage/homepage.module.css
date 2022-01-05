@@ -76,15 +76,20 @@
       outline: none;
   }
 
-.searchBarWrapper:focus-within {
-    /* border: 2px solid var(--main-color); */
-  }
+  /* .searchBarWrapper:focus-within {
+    border: 2px solid var(--main-color);
+  } */
 
   .searchButton{
       display: grid;
       align-items: center;
       justify-content: center;
       background-color: var(--main-color);
+  }
+
+  .menuCon{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
   }
 
 @media screen and (max-width: 968px){
