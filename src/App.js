@@ -1,9 +1,12 @@
 import './App.css';
-import Container from './components/Container';
+import HomePage from './pages/HomePage';
+import Login from './pages/Login';
+
 
 function App() {
   return (
-     <Container/>
+    //  <Login/>
+     <HomePage/>
   );
 }
 

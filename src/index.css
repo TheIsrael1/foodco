@@ -7,3 +7,23 @@
   margin: 0;
   box-sizing: inherit;
 }
+
+:root {
+  --main-color: #05A95C;
+  --black: #707070;
+  --white: #FFFFFF;
+  --red: #fd0404;
+  --bold: 600;
+  --semi-bold: 500;
+  --rounded: 0.7rem;
+  --shadow: rgba(0, 0, 0, 0.161) 0px 3px 6px;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
