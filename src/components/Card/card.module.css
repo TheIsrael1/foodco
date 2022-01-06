@@ -21,12 +21,10 @@
 
 .cardIcon{
     padding: 0 .4rem;
-    /* width: 100%; */
 }
 
 .cardText{
      padding: 0 .5rem;
-
 }
 
 .cardTitle{
@@ -36,5 +34,41 @@
 
 .cardDescription{
     font-size: .75em;
-    /* line-height: 1rem; */
 }
+
+@media screen and (max-width: 968px){
+    .cardCon{
+        width: 8rem;
+    }
+
+    .cardDescription{
+        display: none;
+    } 
+    
+    .cardRow{
+        grid-template-columns: 3rem 3rem;
+        grid-template-areas: "icon icon" "text text";
+        padding: .5rem 1rem;
+    }
+
+    .cardText{
+        grid-area: text;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .cardIcon{
+        grid-area: icon;
+        margin: .2rem auto;
+        width: 3rem;
+    }
+
+    .cardTitle{
+        font-size: 1em;
+        font-weight: 400;
+    }
+
+}
+

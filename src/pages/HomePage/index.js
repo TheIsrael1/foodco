@@ -17,9 +17,7 @@ const HomePage = () => {
              <div className={`${styles.row}`}>
                 <div className={`${styles.content}`}>
                     <div className={`${styles.dashboard}`}>
-                        <div className={`${styles.topImgCon}`}>
                             <img className={`${styles.topImg}`} src={TopImg} alt="img"/>
-                        </div>
                         <div className={`${styles.searchBarCon}`}>
                         <div className={`${styles.searchBarWrapper}`}> 
                             <input className={`${styles.input}`}
@@ -46,7 +44,7 @@ const HomePage = () => {
                             />
                             <Card 
                             title={`My Reports`}
-                            description={`Look At Your Reports Based On InputProvided Daily & Download In A PDF Format`}
+                            description={`Look At Your Reports Based On Input Provided Daily & Download In a PDF Format`}
                             icon={<img src={Folder} alt='folder'></img>}
                             />
                             <Card 
