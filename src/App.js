@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
+import Modal from "./components/Modal";
 import DailyInput from "./pages/DailyInput";
 import HomePage from './pages/HomePage';
 import Login from './pages/Login';
@@ -10,9 +11,10 @@ function App() {
 
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={ <Login/>}/>
-      <Route path="/home" element={<HomePage/>}/>
-      <Route path="/dailyinput" element={<DailyInput/>}/>
+      <Route path="/" element={ <Modal />
+}/>
+      {/* <Route path="/home" element={<HomePage/>}/>
+      <Route path="/dailyinput" element={<DailyInput/>}/> */}
     </Routes>
     </BrowserRouter>
   );

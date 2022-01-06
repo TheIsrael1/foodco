@@ -1,0 +1,111 @@
+
+.modalContainer {
+    background: #080616;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+@media only screen and (min-width: 40em) {
+    .modalOverlay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(24, 23, 67, 0.2) 0%, rgba(5, 5, 13, 0.2) 100%);
+        visibility: visible;
+        backface-visibility: hidden;
+        transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+   }
+}
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+    z-index: 6;
+    background-color: var(--white);
+    max-width: 50em;
+    width: 350px;
+    height: 25em;
+    padding: 1rem;
+    border-radius: 3px;
+    opacity: 1;
+    overflow-y: auto;
+    visibility: visible;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backface-visibility: hidden;
+    transform: scale(1.2);
+    transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.modal .modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    opacity: 1;
+    backface-visibility: visible;
+    transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+    transition-delay: 0.3s;
+}
+
+.modalHeader{
+    color: var(--black);
+    font-size: 1.5rem;
+}
+
+.modalIcon{
+    width: 125px;
+    height: 198px;
+}
+
+.modalButtonCon{
+    width: 6rem;
+}
+
+
+.modalButton{
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    padding-block: auto;
+    padding-inline: auto;
+    width: 100%;
+    height: 2.2rem;
+    background-color: var(--main-color);
+    color: var(--white);
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.modalButton:hover{
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+}
+
+.modalButton:active {
+    transform: scale(0.98);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+  }
+
+
+@media only screen and (max-width: 39.9375em) {
+    h1 {
+        font-size: 1.5rem;
+   }
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 0;
+        transform: scale(1.1);
+        padding: 0 !important;
+   }
+}
