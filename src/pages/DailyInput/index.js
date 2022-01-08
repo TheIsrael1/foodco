@@ -23,11 +23,13 @@ const DailyInput = () => {
                             icon={<img src={Add} alt='add'></img>}
                             />
                             </Link>
+                            <Link to='/dailyinput/2'>
                             <Card 
                             title={`Input 2`} 
                             description={`Please Make Your Second Input for Today`} 
                             icon={<img src={Add} alt='chart'></img>}
                             />
+                            </Link>
                             <Card 
                             title={`Edit My Input`}
                             description={`Edit Input Error, Please Note That InputCannot Be Edited After 24 Hours`}

@@ -1,42 +1,43 @@
 import React,{useState} from 'react'
-import styles from './newEntryForm.module.css'
+import styles from './newEntryFormTwo.module.css'
 import Logo from '../../assets/Logo.svg'
 import {HiOutlineArrowNarrowLeft} from 'react-icons/hi'
 import Add from '../../assets/Add.svg'
 import Select from '../Select'
 import Input from '../Input'
+import {Outlet} from '../../utils/Outlet'
 import {Pastry} from '../../utils/Pastry'
-import { RawMaterials } from '../../utils/Pastry'
-import { usePastriesUpdate } from '../../context/pastryContext'
 import { Link } from 'react-router-dom'
+import { useOutletsUpdate } from '../../context/OutletContext'
 import { useNavigate } from 'react-router-dom'
 
+const NewEntryFormTwo = () => {
 
-const NewEntryForm = () => {
-
+    const[outlet, setOutlet] = useState("")
     const[pastry, setPastry] = useState("")
-    const[rawMaterial, setRawMaterial] = useState("")
-    const[cost, setCost] = useState()
-    const[rawMaterials, setRawMaterials] = useState([])
-    const add = usePastriesUpdate()
-    const navigate = useNavigate()
+    const[amount, setAmount] = useState("")
+    const[distributionCost, setDistributionCost] = useState()
+    const[pastriesSupplied, setPastriesSupplied] = useState([])
 
-
-    const addRawMaterial = () =>{
-        setRawMaterials(rawMaterials => [...rawMaterials, {name: rawMaterial, cost: cost}])
-        setRawMaterial((rawMaterial)=> rawMaterial= "")
-        setCost((cost)=> cost=0)
-    }
+    const updateOutlets = useOutletsUpdate();
+    const navigate = useNavigate();
 
     const addPastry = () =>{
-        add({name_of_pastry: pastry,
-            raw_materials: rawMaterials
-        })
-        navigate('/dailyinput/1')
-        
+        setPastriesSupplied((pastriesSupplied) => [...pastriesSupplied, {name: pastry, amount: amount}])
+        setPastry((pastry)=> pastry= "")
+        setAmount((amount)=> amount=0)
     }
-    // console.log(rawMaterials)
-    // console.log("pastries", view)
+
+    const addOutlet = () =>{
+        updateOutlets({
+            outlet: outlet,
+            pastries: pastriesSupplied,
+            cost_of_distribution: distributionCost
+        })
+
+        navigate('/dailyinput/2')
+
+    }
 
     return (
         <div className={`${styles.container}`}>
@@ -47,41 +48,52 @@ const NewEntryForm = () => {
                     <div className={`${styles.header}`}>
                         <img src={Add} alt="add" />
                         <h1>
-                            Add new Pastry
+                            Add new Outlet
                         </h1>
                     </div>
 
                     <div className={`${styles.formContainer}`}>
-                        <Select
-                        items={Pastry}
-                        onChange={(e)=>setPastry(e.target.value)}
-                        placeholder={"pastry"}
-                        value={pastry}
-                        />
+                            <Select 
+                            items={Outlet}
+                            onChange={(e)=>setOutlet(e.target.value)}
+                            placeholder={"outlet"}
+                            value={outlet}
+                            long={true}
+                            />
+                            <Input 
+                            id="distributionCost"
+                            name="distributionCost"
+                            type="number"
+                            placeholder="cost of distribution"
+                            // short={true}
+                            value={distributionCost}
+                            setValue={setDistributionCost}
+                            error={""}
+                            />
                         <div className={`${styles.subFormContainer}`}>
-                        <h2>  Add Raw Materials Needed For Pastry</h2>
+                        <h2>  Add Pastries Supplied to this Outlet</h2>
                         <hr className={`${styles.divider}`}/>
                         <div className={`${styles.subForm}`}>
                             <Select 
-                            items={RawMaterials}
-                            onChange={(e)=>setRawMaterial(e.target.value)}
-                            placeholder={"raw material"}
-                            value={rawMaterial}
+                            items={Pastry}
+                            onChange={(e)=>setPastry(e.target.value)}
+                            placeholder={"pastry"}
+                            value={pastry}
                             />
                             <Input 
-                            id="cost"
-                            name="cost"
+                            id="amount"
+                            name="amount"
                             type="number"
-                            placeholder="cost"
+                            placeholder="amount"
                             short={true}
-                            value={cost}
-                            setValue={setCost}
+                            value={amount}
+                            setValue={setAmount}
                             error={""}
                             />
                             <button 
                             className={`${styles.entryAreaHeaderBtn}`}
-                            onClick={addRawMaterial}
-                            disabled={!(rawMaterial && cost)}
+                            onClick={addPastry}
+                            disabled={!(pastriesSupplied && amount)}
                             >
                                 Add
                             </button>
@@ -93,22 +105,22 @@ const NewEntryForm = () => {
                     <div className={`${styles.entryArea}`}>
                         <div className={`${styles.entryAreaHeader}`}>
                             <h2>
-                                Raw Materials Entry
+                             Pastries
                             </h2>
                             <h2>
-                                {rawMaterials.length ? "Cost" : ""}
+                                {pastriesSupplied.length ? "amount" : ""}
                             </h2>
                         </div>
                         <hr className={`${styles.divider}`} />
                         <div className={`${styles.entryAreaBody}`}>
-                            {rawMaterials.length ? 
-                            rawMaterials.map((r,idx)=>(
+                            {pastriesSupplied.length ? 
+                            pastriesSupplied.map((p,idx)=>(
                                 <li key={idx} className={`${styles.entryItem}`}>
                                     <small>
-                                    {r.name}
+                                    {p.name}
                                     </small>
                                     <small>
-                                    ₦{r.cost}
+                                    {p.amount}
                                     </small>
                                 </li>
                             ))
@@ -118,16 +130,16 @@ const NewEntryForm = () => {
                     </div>
                 </div>
                 <div className={`${styles.bottom}`}>
-                    <Link to="/dailyinput/1">
+                    <Link to="/dailyinput/2">
                     <div className={`${styles.backLink}`}>
                         <HiOutlineArrowNarrowLeft size={24} color='white' />
                     </div>
                     </Link>
                     <button className={`${styles.entryAreaHeaderBtn}`}
-                    onClick={addPastry}
-                    disabled={!rawMaterials.length}
+                    onClick={addOutlet}
+                    disabled={!pastriesSupplied.length}
                     >
-                        Add Pastry
+                        Add Outlet
                     </button>
                 </div>
                 </div>
@@ -141,4 +153,4 @@ const NewEntryForm = () => {
     )
 }
 
-export default NewEntryForm
+export default NewEntryFormTwo

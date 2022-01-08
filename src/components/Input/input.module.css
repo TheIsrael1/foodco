@@ -25,6 +25,10 @@
     overflow: hidden;
     margin: 0;
   }
+
+  .InputContainerShort .InputWrapper{
+    height: 2.4rem;
+  }
   
   .InputWrapper:focus-within {
     border: 2px solid var(--main-color);

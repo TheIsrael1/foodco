@@ -5,12 +5,13 @@ const Select = ({
     items,
     onChange,
     placeholder,
-    value
+    value,
+    long
 
 }) => {
     return (
         <select 
-        className={`${styles.select}`}
+        className={` ${styles.select} ${long && styles.selectLong}`}
         onChange={onChange}
         value={value}
         >
