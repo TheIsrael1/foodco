@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './inputTwo.module.css'
 import Logo from '../../assets/Logo.svg'
 import {HiOutlineArrowNarrowLeft} from 'react-icons/hi'
@@ -12,8 +12,23 @@ const InputTwo = () => {
     const[totalPastriesProd,setTotalPastriesProd] = useState()
     const[totalPastriesSold,setTotalPastriesSold] = useState()
 
+
     const outlets = useOutlets()
 
+
+    useEffect(() => {
+        setTotalPastriesProd(JSON.parse(window.sessionStorage.getItem('totalProd')));
+        setTotalPastriesSold(JSON.parse(window.sessionStorage.getItem('totalSold')));
+
+      }, []);
+    
+      useEffect(() => {
+        window.sessionStorage.setItem('totalProd',totalPastriesProd);
+      }, [totalPastriesProd]);
+
+      useEffect(() => {
+          window.sessionStorage.setItem('totalSold',totalPastriesSold);
+      }, [totalPastriesSold]);
 
     return (
         <div className={`${styles.container}`}>
@@ -54,6 +69,7 @@ const InputTwo = () => {
                             <Link to="/dailyinput/2/new">
                             <button  className={`${styles.entryAreaHeaderBtn}`}
                             disabled={!(totalPastriesProd && totalPastriesSold)}
+                            
                             >
                                 Add new Outlet
                             </button>
@@ -91,6 +107,7 @@ const InputTwo = () => {
                     </Link>
                     <button className={`${styles.entryAreaHeaderBtn}`}>
                         Submit
+                        {/* on submit clear sessionStorage */}
                     </button>
                 </div>
                 </div>

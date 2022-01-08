@@ -9,6 +9,7 @@ import {PastryProvider} from './context/pastryContext'
 import { OutletProvider } from "./context/OutletContext";
 import InputTwo from "./pages/InputTwo";
 import NewEntryFormTwo from "./components/NewEntryFormTwo";
+import MyReports from "./pages/MyReports";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Route path="/dailyinput/1/new" element={<NewEntryForm/>}/>
       <Route path="/dailyinput/2" element={<InputTwo />}/>
       <Route path="/dailyinput/2/new" element={<NewEntryFormTwo />}/>
+      <Route path="/myreports" element={<MyReports />}/>
     </Routes>
     </BrowserRouter>
     </PastryProvider>
