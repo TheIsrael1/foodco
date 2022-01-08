@@ -11,7 +11,9 @@ const Input = ({
   setValue,
   placeholder,
   name,
-  required = true
+  required = true,
+  short,
+  style
 }) => {
   
   const ref = useRef(null)
@@ -26,9 +28,9 @@ const Input = ({
     ref.current.type = passwordVisible ? "text" : "password"
   }
 
-  return (
+  return (  
     <>
-      <div className={`${styles.InputContainer}`}>
+      <div style={style} className={`${ short ? styles.InputContainerShort : styles.InputContainer}`}>
         <div
           className={`${styles.InputWrapper} ${
             type === "password" ? styles.InputWrapperWithPassword : ""

@@ -8,7 +8,7 @@
     height: 100vh;
     width: 100%;
     padding: 2rem;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .row{
@@ -105,6 +105,22 @@
   
   .entryAreaHeaderBtn:disabled {
     background: var(--main-color);
+  }
+
+  .entryAreaBody{
+      color: var(--black);
+      font-size: 1rem;
+  }
+
+  .entryAreaBody li{
+      text-decoration: none;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
+
+  .entryAreaBody div{
   }
 
   .divider{
