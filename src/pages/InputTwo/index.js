@@ -6,29 +6,29 @@ import Add from '../../assets/Add.svg'
 import { Link } from 'react-router-dom'
 import Input from '../../components/Input'
 import { useOutlets } from '../../context/OutletContext'
+import { useInput2, useInput2Update } from '../../context/OutletContext'
 
 const InputTwo = () => {
 
     const[totalPastriesProd,setTotalPastriesProd] = useState()
     const[totalPastriesSold,setTotalPastriesSold] = useState()
 
+    const saveInputs = useInput2Update();
+    const getInputs = useInput2();
+    console.log(getInputs)
 
     const outlets = useOutlets()
 
 
     useEffect(() => {
-        setTotalPastriesProd(JSON.parse(window.sessionStorage.getItem('totalProd')));
-        setTotalPastriesSold(JSON.parse(window.sessionStorage.getItem('totalSold')));
+        setTotalPastriesProd(getInputs.length ? getInputs[0][0]: null);
+        setTotalPastriesSold(getInputs.length ? getInputs[0][1]: null);
 
       }, []);
     
       useEffect(() => {
-        window.sessionStorage.setItem('totalProd',totalPastriesProd);
-      }, [totalPastriesProd]);
-
-      useEffect(() => {
-          window.sessionStorage.setItem('totalSold',totalPastriesSold);
-      }, [totalPastriesSold]);
+          saveInputs([totalPastriesProd,totalPastriesSold])
+      }, [totalPastriesProd,totalPastriesSold]);
 
     return (
         <div className={`${styles.container}`}>

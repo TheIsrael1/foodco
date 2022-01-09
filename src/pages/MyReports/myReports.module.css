@@ -90,6 +90,28 @@
       flex-direction: column;
   }
 
+  .backLink{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-color);
+    width: 3rem;
+    height: 3rem; 
+    position: absolute;
+    bottom: 1rem;
+
+}
+
+.backLink:hover{
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+  }
+
+  .backLink:active {
+    transform: scale(0.98);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+  }
+    
+
 @media screen and (max-width: 968px){
     .wrapper{
         padding: 1rem;

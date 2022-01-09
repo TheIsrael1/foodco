@@ -15,7 +15,14 @@ const Select = ({
         onChange={onChange}
         value={value}
         >
-            <option value="" defaultValue={true} disabled>select {placeholder}</option>
+            <option 
+            className={` ${styles.option}`}
+            value="" 
+            defaultValue={true} 
+            disabled
+            >
+            select {placeholder}
+            </option>
             {items && items.map((i,idx)=>(
                 <option key={idx}>{i}</option>
             ))}
