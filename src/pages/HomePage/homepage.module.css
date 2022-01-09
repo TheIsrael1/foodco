@@ -105,6 +105,7 @@
     
     .row{
         grid-template-columns: auto auto;
+        grid-template-rows: 8rem auto;
         grid-template-areas: "logoContainer logoContainer" "content content";
     }
 

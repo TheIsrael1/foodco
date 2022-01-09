@@ -29,7 +29,7 @@ const InputOne = () => {
                             <h2 >
                                 Pastry Entry
                             </h2>
-                                <Link to="/dailyinput/1/new">
+                                <Link to="new">
                                 <button  className={`${styles.entryAreaHeaderBtn}`} >
                                     Add new Pastry
                                 </button>

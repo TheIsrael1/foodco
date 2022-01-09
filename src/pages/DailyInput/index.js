@@ -16,14 +16,14 @@ const DailyInput = () => {
                     <div className={`${styles.dashboard}`}>
                         <img className={`${styles.topImg}`} src={TopImg} alt="img"/>
                         <div className={`${styles.menuCon}`}>
-                            <Link to="/dailyinput/1">
+                            <Link to="1">
                             <Card
                             title={`Input 1`} 
                             description={`Please Make Your First Input for Today`} 
                             icon={<img src={Add} alt='add'></img>}
                             />
                             </Link>
-                            <Link to='/dailyinput/2'>
+                            <Link to='2'>
                             <Card 
                             title={`Input 2`} 
                             description={`Please Make Your Second Input for Today`} 
@@ -42,9 +42,11 @@ const DailyInput = () => {
                     <img className={`${styles.logo}`} src={Logo} alt="logo" />
                 </div>
              </div>
+             <Link to='/home'>
              <div className={`${styles.backLink}`}>
                  <HiOutlineArrowNarrowLeft size={24} color='white' />
              </div>
+             </Link>
         </div>   
      </div>
     )

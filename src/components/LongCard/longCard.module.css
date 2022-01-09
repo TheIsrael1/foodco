@@ -3,9 +3,9 @@
     color: var(--black);
     box-shadow: var(--shadow);
     margin: 1rem 0;
+    padding: 1rem .5rem;
     margin-right: .5rem;
-    height: 6rem;
-    width: 18rem;
+    width: 100%;
     border-radius: 8px;
     transition: all .1s ease-in;
     cursor: pointer;
@@ -15,35 +15,39 @@
     transform: scale(0.98)
 }
 
+.cardCon:active{
+    transform: scale(0.98)
+}
 
 .cardRow{
     display: grid;
-    grid-template-columns: 3rem auto;
+    grid-template-columns: 5rem auto;
     align-items: center;
     margin: auto 0;
     padding: .5rem 1rem;
 }
 
 .cardIcon{
-    padding: 0 .4rem;
+    /* padding: 0 .4rem; */
 }
 
 .cardText{
-     padding: 0 .5rem;
+     padding: 0 .8rem;
 }
 
 .cardTitle{
-    font-size: 1.2em;
-    font-weight: 400;
+    font-size: 1.75rem;
+    font-weight: 400
 }
 
 .cardDescription{
     font-size: .75em;
+    line-height: 12.5px;
 }
 
 @media screen and (max-width: 968px){
-    .cardCon{
-        width: 8rem;
+    .cardCon{ 
+        padding: .8rem .5rem;
     }
 
     .cardDescription{
@@ -51,21 +55,18 @@
     } 
     
     .cardRow{
-        grid-template-columns: 3rem 3rem;
-        grid-template-areas: "icon icon" "text text";
-        padding: .5rem 1rem;
+        grid-template-columns: 3rem auto;
+        
     }
 
     .cardText{
-        grid-area: text;
-        text-align: center;
+        /* text-align: center; */
         display: flex;
         align-items: center;
-        justify-items: center;
+        /* justify-items: center; */
     }
 
     .cardIcon{
-        grid-area: icon;
         margin: .2rem auto;
         width: 3rem;
     }

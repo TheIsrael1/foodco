@@ -66,7 +66,7 @@ const InputTwo = () => {
                             <h2 >
                                 Outlet Entry
                             </h2>   
-                            <Link to="/dailyinput/2/new">
+                            <Link to="new">
                             <button  className={`${styles.entryAreaHeaderBtn}`}
                             disabled={!(totalPastriesProd && totalPastriesSold)}
                             
@@ -81,10 +81,10 @@ const InputTwo = () => {
                                 <li key={idx}> 
                                     <div>
                                     <div>
-                                    Outlet{`>>`} {o.outlet}
+                                    Outlet {`>>`} {o.outlet}
                                     </div>
                                     <div>
-                                    Cost of distribution{`>>`} {o.cost_of_distribution}
+                                    Cost of distribution {`>>`} {o.cost_of_distribution}
                                     </div>
                                     <div>
                                     Pastries Supplied {`>>`} {" "}

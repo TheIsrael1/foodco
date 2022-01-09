@@ -125,7 +125,7 @@ const NewEntryForm = () => {
                     </Link>
                     <button className={`${styles.entryAreaHeaderBtn}`}
                     onClick={addPastry}
-                    disabled={!rawMaterials.length}
+                    disabled={!(rawMaterials.length && pastry)}
                     >
                         Add Pastry
                     </button>
