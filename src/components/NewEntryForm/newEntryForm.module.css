@@ -110,6 +110,7 @@
 
   .entryAreaBody{
       color: var(--black);
+      padding-bottom: 3rem;
   }
 
   .entryItem{
