@@ -21,8 +21,8 @@ const InputTwo = () => {
 
 
     useEffect(() => {
-        setTotalPastriesProd(getInputs.length ? getInputs[0][0]: null);
-        setTotalPastriesSold(getInputs.length ? getInputs[0][1]: null);
+        setTotalPastriesProd(getInputs.length ? getInputs[0][0]: "");
+        setTotalPastriesSold(getInputs.length ? getInputs[0][1]: "");
 
       }, []);
     

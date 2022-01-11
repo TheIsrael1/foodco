@@ -25,7 +25,7 @@ const NewEntryFormTwo = () => {
     const addPastry = () =>{
         setPastriesSupplied((pastriesSupplied) => [...pastriesSupplied, {name: pastry, amount: amount}])
         setPastry((pastry)=> pastry= "")
-        setAmount((amount)=> amount=0)
+        setAmount((amount)=> amount= "")
     }
 
     const addOutlet = () =>{

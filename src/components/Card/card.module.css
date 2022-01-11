@@ -3,6 +3,7 @@
     color: var(--black);
     box-shadow: var(--shadow);
     margin: 1rem 0;
+    /* padding: 1rem 0; */
     margin-right: .5rem;
     height: 6rem;
     width: 18rem;
@@ -64,6 +65,10 @@
         justify-items: center;
     }
 
+    .cardText{
+        padding: 0 auto;
+   }
+
     .cardIcon{
         grid-area: icon;
         margin: .2rem auto;
@@ -71,8 +76,9 @@
     }
 
     .cardTitle{
-        font-size: 1em;
+        font-size: .95em;
         font-weight: 400;
+        text-align: center;
     }
 
 }

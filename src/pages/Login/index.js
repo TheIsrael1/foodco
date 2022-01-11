@@ -3,15 +3,19 @@ import styles from './login.module.css'
 import Logo from '../../assets/Logo.svg'
 import Form from '../../components/Form'
 import Input from '../../components/Input'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
 
     const [password, setPassword] = useState("")
     const [staffId, setStaffId] = useState("")
 
+    const navigate = useNavigate();
+
 
     const handleSubmit = (e) =>{
         e.preventDefault()
+        navigate('/home')
 
     }
 
